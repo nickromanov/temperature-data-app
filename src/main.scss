@@ -1,0 +1,33 @@
+:root {
+  --body-color: #008B8B
+}
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+body {
+  background: var(--body-color);
+  color: var(--blue-50);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+header {
+  background: var(--body-color);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 1rem 0;
+}
