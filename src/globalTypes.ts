@@ -1,5 +1,8 @@
 import {MessageProps} from 'primevue/message';
 
+/**
+ * List
+ */
 export interface IListItem {
 	id: string;
 	temperature: string;
