@@ -42,6 +42,10 @@
 	export default class TemperatureList extends Vue {
 		private editingRows: [] = [];
 
+		/**
+		 *
+		 * @param elem
+		 */
 		private rowClass(elem: IListItem): string {
 			const isEven = !(appStore.state.list.indexOf(elem) % 2);
 			return `td-List-Row__${isEven ? 'even' : 'odd'}`
@@ -52,7 +56,7 @@
 		}
 
 		onRowEditSave(event: DataTableCellEditCompleteEvent) {
-					appStore.actions.updateList({
+			appStore.actions.updateList({
 				idx: event.index,
 				newValue: event.newData
 			});

@@ -16,6 +16,9 @@
 		protected id: string = '';
 		protected tempData: string = '';
 
+		/**
+		 * Saves data to storage.list
+		 */
 		saveData(): void {
 			appStore.actions.addToList({id: this.id, temperature: this.tempData});
 		}
