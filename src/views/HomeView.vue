@@ -5,7 +5,6 @@
 <script lang="ts">
 	import { Options, Vue } from 'vue-class-component';
 	import TemperatureList from '@/components/TemperatureList.vue';
-
 	@Options({
 		components: {
 			TemperatureList

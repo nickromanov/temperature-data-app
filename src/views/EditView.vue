@@ -1,11 +1,10 @@
 <template>
     <div class="td-AddPage">
+        <Button label="Click to create" class="td-App-Create p-button-raised p-button-rounded" @click="create"/>
         <form class="td-AddForm__wrapper">
             <InputText class="td-AddForm__input" placeholder="Enter id here" v-model="id"></InputText>
             <InputText class="td-AddForm__input" placeholder="Enter temperature here" v-model="tempData"></InputText>
         </form>
-
-        <Button label="Add" class="p-button-raised p-button-rounded" @click="saveData"/>
     </div>
 </template>
 <script lang="ts">
@@ -19,8 +18,12 @@
 		/**
 		 * Saves data to storage.list
 		 */
-		saveData(): void {
-			appStore.actions.addToList({id: this.id, temperature: this.tempData});
+		create(): void {
+			appStore.actions.addToList({
+				$idx: appStore.state.list.length + 1,
+				id: this.id,
+				temperature: this.tempData
+			});
 		}
 	}
 </script>
@@ -29,12 +32,11 @@
     .td-AddForm__wrapper {
         display: flex;
         flex-direction: column;
-        max-width: 75%;
         margin: 7px auto;
     }
 
     .td-AddForm__input {
-        margin-bottom: 8px;
+        margin-bottom: 1rem;
     }
 
 </style>

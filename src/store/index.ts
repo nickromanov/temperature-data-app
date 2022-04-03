@@ -1,5 +1,5 @@
 import { createStore, Module } from 'vuex-smart-module'
-import { listModule } from './user'
+import { listModule } from './app'
 
 
 const store = createStore(
