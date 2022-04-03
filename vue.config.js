@@ -1,4 +1,4 @@
-const { defineConfig } = require('@vue/cli-service')
+const { defineConfig } = require('@vue/cli-service');
 module.exports = defineConfig({
   transpileDependencies: true,
 
@@ -7,5 +7,8 @@ module.exports = defineConfig({
       shouldServeApp: true,
       serverDir: './srv'
     }
-  }
-})
+  },
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/temperature-data-app/'
+    : '/'
+});
